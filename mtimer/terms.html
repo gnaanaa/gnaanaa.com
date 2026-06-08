@@ -6,8 +6,18 @@
 		<title>Terms of Service - MTimer Instrument</title>
 		<link rel="stylesheet" href="../assets/css/portal.css">
 		<script>
-			if (localStorage.getItem('theme') === 'light') {
-				document.documentElement.classList.add('light-theme');
+			try {
+				const savedTheme = localStorage.getItem('theme');
+				const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+				if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
+					document.documentElement.classList.add('light-theme');
+				}
+			} catch (e) {
+				console.warn('localStorage is not accessible:', e);
+				// Fallback to system preferred theme if localStorage is blocked
+				if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+					document.documentElement.classList.add('light-theme');
+				}
 			}
 		</script>
 		<style> 

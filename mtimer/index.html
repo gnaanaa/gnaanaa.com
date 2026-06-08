@@ -107,22 +107,57 @@
 		const themeToggle = document.getElementById('themeToggle');
 		const root = document.documentElement;
 
+		// Safe Storage Helper to handle cases where localStorage is disabled (e.g. file:// protocol or blocked cookies)
+		const themeStorage = {
+			getItem(key) {
+				try {
+					return localStorage.getItem(key);
+				} catch (e) {
+					console.warn('localStorage is not accessible, using session storage fallback.', e);
+					try {
+						return sessionStorage.getItem(key);
+					} catch (e2) {
+						return this.fallbackStore[key] || null;
+					}
+				}
+			},
+			setItem(key, value) {
+				try {
+					localStorage.setItem(key, value);
+				} catch (e) {
+					console.warn('localStorage is not accessible, using session storage fallback.', e);
+					try {
+						sessionStorage.setItem(key, value);
+					} catch (e2) {
+						this.fallbackStore[key] = value;
+					}
+				}
+			},
+			fallbackStore: {}
+		};
+
 		function updateButtonText(isLight) {
 			if (themeToggle) themeToggle.textContent = isLight ? 'DARK MODE' : 'LIGHT MODE';
 		}
 
-		// 1. Initial State Check (Immediate)
-		const savedTheme = localStorage.getItem('theme');
-		if (savedTheme === 'light') {
+		// 1. Initial State Check (respects saved preference first, then falls back to system preferred scheme)
+		const savedTheme = themeStorage.getItem('theme');
+		const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+		const isLight = savedTheme === 'light' || (!savedTheme && systemPrefersLight);
+
+		if (isLight) {
 			root.classList.add('light-theme');
 			updateButtonText(true);
+		} else {
+			root.classList.remove('light-theme');
+			updateButtonText(false);
 		}
 
 		// 2. Click Handler
 		if (themeToggle) {
 			themeToggle.addEventListener('click', () => {
 				const isLightNow = root.classList.toggle('light-theme');
-				localStorage.setItem('theme', isLightNow ? 'light' : 'dark');
+				themeStorage.setItem('theme', isLightNow ? 'light' : 'dark');
 				updateButtonText(isLightNow);
 			});
 		}
