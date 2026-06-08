@@ -13,7 +13,7 @@
 }
 
 /* Light Theme Overrides */
-html.light-theme {
+:root.light-theme {
     --bg: #f8f9fa;
     --text-main: #1a1a1a;
     --text-dim: #6c757d;
