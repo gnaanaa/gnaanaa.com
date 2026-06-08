@@ -7,14 +7,13 @@
     --text-main: #ffffff;
     --text-dim: #888888;
     --border: rgba(255,255,255,0.1);
-    --font-main: 'Inter', sans-serif;
     --card-bg: #050505;
     --btn-hover-bg: #ffffff;
     --btn-hover-text: #000000;
 }
 
 /* Light Theme Overrides */
-:root.light-theme {
+html.light-theme {
     --bg: #f8f9fa;
     --text-main: #1a1a1a;
     --text-dim: #6c757d;
@@ -25,7 +24,7 @@
 }
 
 body {
-    font-family: var(--font-main);
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: var(--text-main);
     margin: 0;
