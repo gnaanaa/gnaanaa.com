@@ -3,32 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Studio Name - Apps</title>
-    <style>
-        body { font-family: 'Inter', sans-serif; background: #000; color: #fff; text-align: center; padding: 50px; }
-        .container { max-width: 900px; margin: auto; }
-        .app-card { border: 1px solid #333; padding: 30px; margin: 20px; display: inline-block; width: 250px; vertical-align: top; border-radius: 12px; transition: 0.3s; text-decoration: none; color: inherit; }
-        .app-card:hover { border-color: #666; background: #111; }
-        h1 { font-weight: 200; letter-spacing: 5px; margin-bottom: 50px; }
-        .privacy-link { color: #888; font-size: 0.8rem; margin-top: 10px; display: block; }
-    </style>
+    <title>gnaanaa | Software Instruments</title>
+    <link rel="stylesheet" href="assets/css/portal.css">
 </head>
 <body>
-    <div class="container">
-        <h1>DEVELOPER PORTAL</h1>
-        
-        <!-- MTimer Project -->
-        <a href="mtimer/index.html" class="app-card">
-            <h2>MTIMER</h2>
-            <p>High-Precision Meditation Instrument</p>
-            <span class="privacy-link">View Project Details & Privacy</span>
-        </a>
 
-        <!-- Placeholder for Future Projects -->
-        <div class="app-card" style="opacity: 0.3;">
-            <h2>COMING SOON</h2>
-            <p>New Instrument in Calibration</p>
+    <header style="padding: 150px 20px 80px; text-align: center;">
+        <h1>GNAANAA</h1>
+        <p style="letter-spacing: 5px; color: var(--text-dim); font-size: 0.8rem; margin-top: 10px;">SOFTWARE INSTRUMENTS & BIOMETRIC TOOLS</p>
+    </header>
+
+    <main class="container">
+        <div class="app-grid">
+            
+            <!-- MTimer Entry -->
+            <a href="mtimer/index.html" class="app-card">
+                <h2>MTIMER</h2>
+                <p>A high-precision meditation instrument with local biometric analysis.</p>
+                <span style="color: var(--primary); font-size: 0.7rem; letter-spacing: 2px;">ENTER HUD &rarr;</span>
+            </a>
+
+            <!-- Future Project Slot -->
+            <div class="app-card" style="opacity: 0.2; cursor: default;">
+                <h2>COMING SOON</h2>
+                <p>New instrument currently in calibration.</p>
+            </div>
+
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <p style="color: #222; font-size: 0.7rem; margin-bottom: 20px;">CALIBRATED FOR DEPTH</p>
+        <a href="mailto:gnaanaa@gmail.com">CONTACT</a>
+        <a href="https://github.com/gnaanaa">GITHUB</a>
+    </footer>
+
 </body>
 </html>
