@@ -103,22 +103,29 @@
     </footer>
 
     <!-- Theme Sync Script -->
-    <script>
-        const toggle = document.getElementById('themeToggle');
-        const body = document.body;
+	<script>
+		const themeToggle = document.getElementById('themeToggle');
+		const root = document.documentElement;
 
-        // Initialize from shared LocalStorage
-        if (localStorage.getItem('theme') === 'light') {
-            body.classList.add('light-theme');
-            toggle.textContent = 'DARK MODE';
-        }
+		function updateButtonText(isLight) {
+			if (themeToggle) themeToggle.textContent = isLight ? 'DARK MODE' : 'LIGHT MODE';
+		}
 
-        toggle.addEventListener('click', () => {
-            body.classList.toggle('light-theme');
-            const isLight = body.classList.contains('light-theme');
-            toggle.textContent = isLight ? 'DARK MODE' : 'LIGHT MODE';
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        });
-    </script>
+		// 1. Initial State Check (Immediate)
+		const savedTheme = localStorage.getItem('theme');
+		if (savedTheme === 'light') {
+			root.classList.add('light-theme');
+			updateButtonText(true);
+		}
+
+		// 2. Click Handler
+		if (themeToggle) {
+			themeToggle.addEventListener('click', () => {
+				const isLightNow = root.classList.toggle('light-theme');
+				localStorage.setItem('theme', isLightNow ? 'light' : 'dark');
+				updateButtonText(isLightNow);
+			});
+		}
+	</script>
 </body>
 </html>

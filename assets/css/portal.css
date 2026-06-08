@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap');
 
+/* Default Theme (Dark) */
 :root {
     --primary: #00e5ff;
     --bg: #000000;
@@ -8,14 +9,19 @@
     --border: rgba(255,255,255,0.1);
     --font-main: 'Inter', sans-serif;
     --card-bg: #050505;
+    --btn-hover-bg: #ffffff;
+    --btn-hover-text: #000000;
 }
 
-body.light-theme {
+/* Light Theme Overrides */
+:root.light-theme {
     --bg: #f8f9fa;
     --text-main: #1a1a1a;
     --text-dim: #6c757d;
     --border: rgba(0,0,0,0.1);
     --card-bg: #ffffff;
+    --btn-hover-bg: #1a1a1a;
+    --btn-hover-text: #ffffff;
 }
 
 body {
@@ -27,15 +33,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-h1 { font-weight: 200; letter-spacing: 12px; text-transform: uppercase; margin: 0; }
-h2 { font-weight: 400; letter-spacing: 3px; color: var(--primary); text-transform: uppercase; }
-p { color: var(--text-main); opacity: 0.8; font-size: 1rem; }
-
-.container { max-width: 1000px; width: 100%; padding: 0 20px; box-sizing: border-box; }
-
+/* Link Shared Buttons */
 .btn-instrument {
     display: inline-block;
     padding: 12px 35px;
@@ -44,14 +45,36 @@ p { color: var(--text-main); opacity: 0.8; font-size: 1rem; }
     text-decoration: none;
     font-size: 0.8rem;
     letter-spacing: 3px;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 0.3s;
     text-transform: uppercase;
 }
-
 .btn-instrument:hover {
-    background: var(--text-main);
-    color: var(--bg);
+    background: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
 }
+
+/* Theme Toggle Styling */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 8px 15px;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+
+h1 { font-weight: 200; letter-spacing: 12px; text-transform: uppercase; margin: 0; }
+h2 { font-weight: 400; letter-spacing: 3px; color: var(--primary); text-transform: uppercase; }
+p { color: var(--text-main); opacity: 0.8; font-size: 1rem; }
+
+.container { max-width: 1000px; width: 100%; padding: 0 20px; box-sizing: border-box; }
 
 .app-grid {
     display: grid;
@@ -70,20 +93,6 @@ p { color: var(--text-main); opacity: 0.8; font-size: 1rem; }
 }
 
 .app-card:hover { border-color: var(--text-dim); }
-
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--text-main);
-    padding: 8px 15px;
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    z-index: 1000;
-}
 
 footer {
     padding: 60px 20px;

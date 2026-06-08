@@ -98,11 +98,10 @@
         <a href="../index.html">APP PORTAL</a>
     </footer>
 
-    <script>
-        // Apply theme from portal root
-        if (localStorage.getItem('theme') === 'light') {
-            document.body.classList.add('light-theme');
-        }
-    </script>
+	<script>
+		if (localStorage.getItem('theme') === 'light') {
+			document.documentElement.classList.add('light-theme');
+		}
+	</script>
 </body>
 </html>
