@@ -2,41 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gnaanaa | Software Instruments</title>
     <link rel="stylesheet" href="assets/css/portal.css">
 </head>
 <body>
-
+    <button id="themeToggle" class="theme-toggle">LIGHT MODE</button>
     <header style="padding: 150px 20px 80px; text-align: center;">
         <h1>GNAANAA</h1>
-        <p style="letter-spacing: 5px; color: var(--text-dim); font-size: 0.8rem; margin-top: 10px;">SOFTWARE INSTRUMENTS & BIOMETRIC TOOLS</p>
+        <p style="letter-spacing: 5px; color: var(--text-dim); font-size: 0.8rem; margin-top: 10px;">SOFTWARE INSTRUMENTS</p>
     </header>
-
     <main class="container">
         <div class="app-grid">
-            
-            <!-- MTimer Entry -->
             <a href="mtimer/index.html" class="app-card">
                 <h2>MTIMER</h2>
-                <p>A high-precision meditation instrument with local biometric analysis.</p>
+                <p>High-precision meditation instrument with local biometric analysis.</p>
                 <span style="color: var(--primary); font-size: 0.7rem; letter-spacing: 2px;">ENTER HUD &rarr;</span>
             </a>
-
-            <!-- Future Project Slot -->
-            <div class="app-card" style="opacity: 0.2; cursor: default;">
-                <h2>COMING SOON</h2>
-                <p>New instrument currently in calibration.</p>
-            </div>
-
+            <div class="app-card" style="opacity: 0.2;"><h2>COMING SOON</h2><p>In calibration.</p></div>
         </div>
     </main>
-
-    <footer>
-        <p style="color: #222; font-size: 0.7rem; margin-bottom: 20px;">CALIBRATED FOR DEPTH</p>
-        <a href="mailto:gnaanaa@gmail.com">CONTACT</a>
-        <a href="https://github.com/gnaanaa">GITHUB</a>
-    </footer>
-
+    <footer><a href="mailto:support@gnaanaa.com">CONTACT</a></footer>
+    <script>
+        const toggle = document.getElementById('themeToggle');
+        const body = document.body;
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-theme');
+            toggle.textContent = 'DARK MODE';
+        }
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            const isLight = body.classList.contains('light-theme');
+            toggle.textContent = isLight ? 'DARK MODE' : 'LIGHT MODE';
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+    </script>
 </body>
 </html>

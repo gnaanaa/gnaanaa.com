@@ -4,62 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTimer - High-Precision Meditation Instrument</title>
-    <link rel="stylesheet" href="../assets/css/portal.css"> <!-- LINK TO SHARED CSS -->
+    <link rel="stylesheet" href="../assets/css/portal.css">
     <style>
-        /* Specific page additions */
+        /* Page-specific Layout */
         .feature-block { display: flex; align-items: center; gap: 50px; margin-bottom: 80px; }
         .feature-block:nth-child(even) { flex-direction: row-reverse; }
+        
         .screenshot { 
-            flex: 1; border: 1px solid var(--border); border-radius: 20px; 
+            flex: 1; border: 1px solid var(--border); border-radius: 24px; 
             max-width: 280px; aspect-ratio: 9/19; background: #080808;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            overflow: hidden;
         }
-        .screenshot img { width: 100%; border-radius: 20px; }
-        @media (max-width: 768px) { .feature-block { flex-direction: column !important; text-align: center; } }
+        .light-theme .screenshot { background: #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .screenshot img { width: 100%; height: 100%; object-fit: cover; }
+
+        .feature-text { flex: 1.5; }
+        
+        .grid-iconic {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            border-top: 1px solid var(--border);
+            padding-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .feature-block { flex-direction: column !important; text-align: center; }
+            .screenshot { max-width: 220px; }
+        }
     </style>
 </head>
 <body>
 
-    <section class="container" style="padding-top: 120px; text-align: center; border: none;">
-        <img src="assets/icon.png" style="width: 70px; margin-bottom: 20px; border-radius: 15px;" alt="MTimer">
+    <!-- Theme Toggle (Fixed Position) -->
+    <button id="themeToggle" class="theme-toggle">LIGHT MODE</button>
+
+    <!-- Hero Section -->
+    <section class="container" style="padding: 120px 20px 80px; text-align: center; border: none;">
+        <img src="assets/images/icon.png" style="width: 70px; margin-bottom: 20px; border-radius: 18px;" alt="MTimer Icon">
         <h1>MTIMER</h1>
-        <p style="letter-spacing: 3px; color: var(--text-dim);">HIGH-PRECISION MEDITATION INSTRUMENT</p>
+        <p style="letter-spacing: 4px; color: var(--text-dim); text-transform: uppercase; font-size: 0.9rem;">High-Precision Meditation Instrument</p>
         <a href="https://play.google.com/store/apps/details?id=com.gnaanaa.mtimer" class="btn-instrument" style="margin-top: 30px;">GET ON PLAY STORE</a>
     </section>
 
+    <!-- Features -->
     <main class="container">
-        <!-- Feature 1 -->
+        
         <div class="feature-block">
-            <div style="flex: 1.5;">
-                <h2>Tactile Setup</h2>
-                <p>The core of the instrument is a high-fidelity rotary dial. Set your duration with tactile precision. The new breathing action pivot provides a biological visual anchor for your focus.</p>
+            <div class="feature-text">
+                <h2>Precision Setup</h2>
+                <p>A zero-chrome HUD designed for the serious practitioner. The high-fidelity rotary dial allows for tactile, distraction-free session setup. The breathing action pivot provides a biological visual anchor for your focus.</p>
             </div>
-            <div class="screenshot"><img src="assets/images/screen-home.png" alt="Home"></div>
+            <div class="screenshot"><img src="assets/images/screen-home.png" alt="Home Screen"></div>
         </div>
 
-        <!-- Feature 2 -->
         <div class="feature-block">
-            <div style="flex: 1.5;">
+            <div class="feature-text">
                 <h2>Biometric Insight</h2>
-                <p>The Session Calm Score analyzes heart rate samples via Health Connect to provide a real-time settling score. No external servers—all processing happens locally.</p>
+                <p>The Session Calm Score analyzes heart rate samples via Health Connect to provide a real-time settling score. No external servers—all biological processing happens locally on your hardware.</p>
             </div>
-            <div class="screenshot"><img src="assets/images/screen-stats.png" alt="Stats"></div>
+            <div class="screenshot"><img src="assets/images/screen-stats.png" alt="Biometrics"></div>
         </div>
 
-        <!-- Feature 3 -->
         <div class="feature-block">
-            <div style="flex: 1.5;">
+            <div class="feature-text">
                 <h2>Atmospheric Depth</h2>
-                <p>Immerse yourself in procedurally generated soundscapes. From Deep Rain to the rhythmic pulse of Ocean Waves, designed to mask digital noise.</p>
+                <p>Immerse yourself in procedurally generated soundscapes. From Deep Rain to the rhythmic pulse of Ocean Waves, the ambient engine facilitates deep stillness while masking digital noise.</p>
             </div>
-            <div class="screenshot"><img src="assets/images/screen-ambient.png" alt="Ambient"></div>
+            <div class="screenshot"><img src="assets/images/screen-ambient.png" alt="Ambient Soundscapes"></div>
+        </div>
+
+        <!-- Quick Features Grid -->
+        <div class="grid-iconic">
+            <div>
+                <h3 style="font-size: 0.8rem; letter-spacing: 2px; color: var(--primary);">INFINITY MODE</h3>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Sit without a ceiling. A safe-hold stop mechanism ensures intentionality.</p>
+            </div>
+            <div>
+                <h3 style="font-size: 0.8rem; letter-spacing: 2px; color: var(--primary);">7 TRADITIONS</h3>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Built-in guide covering Breath Awareness, Mantra, and Self-Inquiry.</p>
+            </div>
+            <div>
+                <h3 style="font-size: 0.8rem; letter-spacing: 2px; color: var(--primary);">DRIVE BACKUP</h3>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Securely sync presets and history using your personal Google Drive storage.</p>
+            </div>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <a href="../index.html">PORTAL</a>
+        <a href="../index.html">APP PORTAL</a>
         <a href="privacy.html">PRIVACY POLICY</a>
+		<a href="terms.html">TERMS OF SERVICE</a>
         <a href="mailto:support@gnaanaa.com">SUPPORT</a>
+        <p style="color: var(--text-dim); opacity: 0.3; font-size: 0.65rem; margin-top: 40px;">&copy; 2026 MTIMER. ALL BIOMETRIC DATA REMAINS LOCAL.</p>
     </footer>
 
+    <!-- Theme Sync Script -->
+    <script>
+        const toggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Initialize from shared LocalStorage
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-theme');
+            toggle.textContent = 'DARK MODE';
+        }
+
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            const isLight = body.classList.contains('light-theme');
+            toggle.textContent = isLight ? 'DARK MODE' : 'LIGHT MODE';
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+    </script>
 </body>
 </html>
