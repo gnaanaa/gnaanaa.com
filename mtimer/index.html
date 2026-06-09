@@ -1,38 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZJR2R7E4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-EKZJR2R7E4');
+	</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTimer - High-Precision Meditation Instrument</title>
     <link rel="stylesheet" href="../assets/css/portal.css">
     <style>
         /* Page-specific Layout */
-        .feature-block { display: flex; align-items: center; gap: 50px; margin-bottom: 80px; }
-        .feature-block:nth-child(even) { flex-direction: row-reverse; }
-        
-        .screenshot { 
-            flex: 1; border: 1px solid var(--border); border-radius: 24px; 
-            max-width: 280px; aspect-ratio: 9/19; background: #080808;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            overflow: hidden;
+        .feature-block { 
+            display: flex; 
+            align-items: center; 
+            gap: 60px; 
+            margin-bottom: 120px; 
         }
-        .light-theme .screenshot { background: #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .screenshot img { width: 100%; height: 100%; object-fit: cover; }
-
-        .feature-text { flex: 1.5; }
+        .feature-block:nth-child(even) { 
+            flex-direction: row-reverse; 
+        }
         
-        .grid-iconic {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-            border-top: 1px solid var(--border);
-            padding-top: 60px;
+        .feature-text { 
+            flex: 1.5; 
+        }
+        
+        .feature-text h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-index {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            margin-bottom: 10px;
+            display: block;
+            letter-spacing: 2px;
+        }
+        
+        @keyframes heartbeat {
+            from { stroke-dashoffset: 150; }
+            to { stroke-dashoffset: 0; }
         }
 
         @media (max-width: 768px) {
-            .feature-block { flex-direction: column !important; text-align: center; }
-            .screenshot { max-width: 220px; }
+            .feature-block { 
+                flex-direction: column !important; 
+                text-align: center; 
+                gap: 40px;
+                margin-bottom: 80px;
+            }
+            .feature-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -42,11 +70,19 @@
     <button id="themeToggle" class="theme-toggle">LIGHT MODE</button>
 
     <!-- Hero Section -->
-    <section class="container" style="padding: 120px 20px 80px; text-align: center; border: none;">
-        <img src="assets/images/icon.png" style="width: 70px; margin-bottom: 20px; border-radius: 18px;" alt="MTimer Icon">
+    <section class="container" style="padding: 130px 20px 80px; text-align: center; border: none;">
+        <div class="precision-badge" style="margin-bottom: 30px;">
+            <span class="pulse-dot anim"></span>
+            MODEL M1 // MEDITATION HUD
+        </div>
+        <div style="margin-bottom: 25px;">
+            <img src="assets/images/icon.png" style="width: 125px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);" alt="MTimer Icon">
+        </div>
         <h1>MTIMER</h1>
-        <p style="letter-spacing: 4px; color: var(--text-dim); text-transform: uppercase; font-size: 0.9rem;">High-Precision Meditation Instrument</p>
-        <a href="https://play.google.com/store/apps/details?id=com.gnaanaa.mtimer" class="btn-instrument" style="margin-top: 30px;">GET ON PLAY STORE</a>
+        <p style="letter-spacing: 5px; color: var(--text-dim); text-transform: uppercase; font-size: 0.85rem; font-family: var(--font-mono); margin-top: 15px;">
+            [ HIGH-PRECISION MEDITATION INSTRUMENT ]
+        </p>
+        <a href="https://play.google.com/store/apps/details?id=com.gnaanaa.mtimer" class="btn-instrument" style="margin-top: 40px;">GET ON PLAY STORE</a>
     </section>
 
     <!-- Features -->
@@ -54,41 +90,59 @@
         
         <div class="feature-block">
             <div class="feature-text">
+                <span class="feature-index">01 // TACTILE SETUP</span>
                 <h2>Precision Setup</h2>
                 <p>A zero-chrome HUD designed for the serious practitioner. The high-fidelity rotary dial allows for tactile, distraction-free session setup. The breathing action pivot provides a biological visual anchor for your focus.</p>
             </div>
-            <div class="screenshot"><img src="assets/images/screen-home.png" alt="Home Screen"></div>
+            <div class="device-frame">
+                <img src="assets/images/screen-home.png" alt="Home Screen">
+            </div>
         </div>
 
         <div class="feature-block">
             <div class="feature-text">
+                <span class="feature-index">02 // PHYSIOLOGICAL RESPONSE</span>
                 <h2>Biometric Insight</h2>
                 <p>The Session Calm Score analyzes heart rate samples via Health Connect to provide a real-time settling score. No external servers—all biological processing happens locally on your hardware.</p>
+                <div style="margin-top: 30px; display: flex; align-items: center; gap: 15px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--primary); letter-spacing: 2px;">
+                    <svg width="60" height="20" style="stroke: var(--primary); stroke-width: 1.5; fill: none; overflow: visible;">
+                        <path d="M 0 10 L 15 10 L 20 2 L 25 18 L 30 10 L 45 10 L 48 6 L 51 14 L 54 10 L 60 10" style="stroke-dasharray: 150; stroke-dashoffset: 150; animation: heartbeat 2.5s infinite linear;"></path>
+                    </svg>
+                    <span>BIOMETRIC FEEDBACK LOOP</span>
+                </div>
             </div>
-            <div class="screenshot"><img src="assets/images/screen-stats.png" alt="Biometrics"></div>
+            <div class="device-frame">
+                <img src="assets/images/screen-stats.png" alt="Biometrics">
+            </div>
         </div>
 
         <div class="feature-block">
             <div class="feature-text">
+                <span class="feature-index">03 // AMBIENT ENGINE</span>
                 <h2>Atmospheric Depth</h2>
                 <p>Immerse yourself in procedurally generated soundscapes. From Deep Rain to the rhythmic pulse of Ocean Waves, the ambient engine facilitates deep stillness while masking digital noise.</p>
             </div>
-            <div class="screenshot"><img src="assets/images/screen-ambient.png" alt="Ambient Soundscapes"></div>
+            <div class="device-frame">
+                <img src="assets/images/screen-ambient.png" alt="Ambient Soundscapes">
+            </div>
         </div>
 
         <!-- Quick Features Grid -->
-        <div class="grid-iconic">
+        <div class="technical-grid">
             <div>
-                <h3 style="font-size: 0.8rem; letter-spacing: 2px; color: var(--primary);">INFINITY MODE</h3>
-                <p style="font-size: 0.85rem; color: var(--text-dim);">Sit without a ceiling. A safe-hold stop mechanism ensures intentionality.</p>
+                <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); margin-bottom: 15px; display: block;">[ COMPONENT 04 // CEILINGLESS ]</span>
+                <h3 style="font-size: 0.85rem; letter-spacing: 2px; color: var(--primary); font-family: var(--font-sans); margin-top: 0; text-transform: uppercase;">INFINITY MODE</h3>
+                <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 0;">Sit without a ceiling. A safe-hold stop mechanism ensures intentionality.</p>
             </div>
             <div>
-                <h3 style="font-size: 0.8rem; letter-spacing: 2px; color: var(--primary);">7 TRADITIONS</h3>
-                <p style="font-size: 0.85rem; color: var(--text-dim);">Built-in guide covering Breath Awareness, Mantra, and Self-Inquiry.</p>
+                <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); margin-bottom: 15px; display: block;">[ COMPONENT 05 // COMPENDIUM ]</span>
+                <h3 style="font-size: 0.85rem; letter-spacing: 2px; color: var(--primary); font-family: var(--font-sans); margin-top: 0; text-transform: uppercase;">7 TRADITIONS</h3>
+                <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 0;">Built-in guide covering Breath Awareness, Mantra, and Self-Inquiry.</p>
             </div>
             <div>
-                <h3 style="font-size: 0.8rem; letter-spacing: 2px; color: var(--primary);">DRIVE BACKUP</h3>
-                <p style="font-size: 0.85rem; color: var(--text-dim);">Securely sync presets and history using your personal Google Drive storage.</p>
+                <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); margin-bottom: 15px; display: block;">[ COMPONENT 06 // SYNC CORE ]</span>
+                <h3 style="font-size: 0.85rem; letter-spacing: 2px; color: var(--primary); font-family: var(--font-sans); margin-top: 0; text-transform: uppercase;">DRIVE BACKUP</h3>
+                <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 0;">Securely sync presets and history using your personal Google Drive storage.</p>
             </div>
         </div>
     </main>
@@ -99,7 +153,9 @@
         <a href="privacy.html">PRIVACY POLICY</a>
 		<a href="terms.html">TERMS OF SERVICE</a>
         <a href="mailto:support@gnaanaa.com">SUPPORT</a>
-        <p style="color: var(--text-dim); opacity: 0.3; font-size: 0.65rem; margin-top: 40px;">&copy; 2026 MTIMER. ALL BIOMETRIC DATA REMAINS LOCAL.</p>
+        <p style="color: var(--text-dim); opacity: 0.3; font-size: 0.65rem; margin-top: 40px; font-family: var(--font-mono); letter-spacing: 1px;">
+            &copy; 2026 MTIMER. ALL BIOMETRIC DATA REMAINS LOCAL // SECURED BY ARCHITECTURE.
+        </p>
     </footer>
 
     <!-- Theme Sync Script -->

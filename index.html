@@ -1,27 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZJR2R7E4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-EKZJR2R7E4');
+	</script>
     <meta charset="UTF-8">
     <title>gnaanaa | Software Instruments</title>
-    <link rel="stylesheet" href="assets/css/portal.css">
+        <link rel="stylesheet" href="assets/css/portal.css">
 </head>
 <body>
     <button id="themeToggle" class="theme-toggle">LIGHT MODE</button>
-    <header style="padding: 150px 20px 80px; text-align: center;">
+    
+    <header style="padding: 160px 20px 80px; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 4px; color: var(--text-dim); margin-bottom: 15px; text-transform: uppercase;">
+            SYS.LOC // [0.0001° N, 0.0001° W]
+        </div>
         <h1>GNAANAA</h1>
-        <p style="letter-spacing: 5px; color: var(--text-dim); font-size: 0.8rem; margin-top: 10px;">SOFTWARE INSTRUMENTS</p>
+        <p style="letter-spacing: 6px; color: var(--text-dim); font-size: 0.75rem; margin-top: 15px; font-family: var(--font-mono); text-transform: uppercase;">
+            [ SOFTWARE INSTRUMENTS // CHRONOMETRIC CORE ]
+        </p>
     </header>
+
     <main class="container">
         <div class="app-grid">
             <a href="mtimer/index.html" class="app-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px;">
+                    <div class="precision-badge">
+                        <span class="pulse-dot anim"></span>
+                        Active HUD
+                    </div>
+                    <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); opacity: 0.5;">NO. 001/002</span>
+                </div>
                 <h2>MTIMER</h2>
-                <p>High-precision meditation instrument with local biometric analysis.</p>
-                <span style="color: var(--primary); font-size: 0.7rem; letter-spacing: 2px;">ENTER HUD &rarr;</span>
+                <p style="margin-bottom: 30px; font-size: 0.95rem; line-height: 1.7;">High-precision meditation instrument with local biometric analysis.</p>
+                <span style="color: var(--primary); font-size: 0.7rem; font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase;">ENTER INSTRUMENT &rarr;</span>
             </a>
-            <div class="app-card" style="opacity: 0.2;"><h2>COMING SOON</h2><p>In calibration.</p></div>
+
+            <div class="app-card" style="opacity: 0.4;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px;">
+                    <div class="precision-badge" style="background: transparent;">
+                        Standby
+                    </div>
+                    <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); opacity: 0.5;">NO. 002/002</span>
+                </div>
+                <h2 style="color: var(--text-dim);">COMING SOON</h2>
+                <p style="margin-bottom: 30px; font-size: 0.95rem; line-height: 1.7;">Mechanical sub-components undergoing system calibration.</p>
+                <span style="color: var(--text-dim); font-size: 0.7rem; font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase; opacity: 0.5;">CALIBRATING...</span>
+            </div>
         </div>
     </main>
-    <footer><a href="mailto:support@gnaanaa.com">CONTACT</a></footer>
+
+    <footer>
+        <a href="mailto:support@gnaanaa.com">CONTACT SUPPORT</a>
+    </footer>
 	<script>
 		const themeToggle = document.getElementById('themeToggle');
 		const root = document.documentElement;
