@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=JetBrains+Mono:wght@200;400;600&display=swap');
 
+/* 1. GLOBAL SAFETY BASELINE */
+*, *::before, *::after {
+    box-sizing: border-box; /* Ensures padding doesn't add to width */
+}
+
 /* Default Theme (Obsidian Dark) */
 :root {
     --primary: #00e5ff;
@@ -25,11 +30,18 @@
     --btn-hover-text: #ffffff;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents any sub-pixel rendering from triggering a scrollbar */
+    position: relative;
+}
+
 body {
     font-family: var(--font-sans);
     background-color: var(--bg);
     color: var(--text-main);
-    margin: 0;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -42,6 +54,36 @@ body *,
 body *::before,
 body *::after {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* 2. IMAGE PROTECTION */
+img {
+    max-width: 100%; /* Ensures no image can ever be wider than its parent */
+    height: auto;
+}
+
+/* 3. MOBILE TYPOGRAPHY CALIBRATION */
+@media (max-width: 480px) {
+    h1 {
+        letter-spacing: 4px !important; /* Prevents "GNAANAA" from pushing past screen edges */
+        font-size: 1.8rem !important;
+        word-break: break-word;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+    }
+    
+    /* Ensure the technical grid doesn't force a wide minimum */
+    .technical-grid {
+        grid-template-columns: 1fr; /* Force single column on very small devices */
+    }
+
+    .container {
+        padding: 0 15px; /* Slightly tighter padding for mobile */
+    }
 }
 
 /* Link Shared Buttons */
@@ -78,6 +120,7 @@ body *::after {
     letter-spacing: 2px;
     z-index: 1000;
     text-transform: uppercase;
+	max-width: calc(100vw - 40px);
 }
 
 .theme-toggle:hover {
@@ -301,4 +344,17 @@ footer a {
 
 footer a:hover {
     color: var(--text-main);
+}
+
+.footer-copy { 
+	color: var(--text-dim); 
+	font-size: 0.65rem; 
+	margin-top: 40px; 
+	font-family: var(--font-mono); 
+	letter-spacing: 1px; 
+	text-transform: uppercase; 
+}
+
+html.light-theme .footer-copy { 
+	color: #a0aab2; 
 }

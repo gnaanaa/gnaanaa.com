@@ -1,23 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZJR2R7E4"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'G-EKZJR2R7E4');
-	</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZJR2R7E4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EKZJR2R7E4');
+    </script>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gnaanaa | Software Instruments</title>
-        <link rel="stylesheet" href="assets/css/portal.css">
+    <link rel="stylesheet" href="assets/css/portal.css">
+    <style>
+        /* Page-specific Responsive Overrides */
+        header {
+            padding: 160px 20px 80px;
+            text-align: center;
+            transition: padding 0.3s ease;
+        }
+
+        .portal-links {
+            display: flex;
+            gap: 25px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 100px 20px 50px;
+            }
+            h1 {
+                font-size: 2.2rem;
+                letter-spacing: 8px;
+            }
+            .app-grid {
+                margin-top: 30px;
+                gap: 20px;
+            }
+            .app-card {
+                padding: 30px;
+            }
+            .portal-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Small screen optimization */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+                letter-spacing: 5px;
+            }
+            .app-card h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <button id="themeToggle" class="theme-toggle">LIGHT MODE</button>
     
-    <header style="padding: 160px 20px 80px; text-align: center;">
+    <header>
         <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 4px; color: var(--text-dim); margin-bottom: 15px; text-transform: uppercase;">
             SYS.LOC // [0.0001° N, 0.0001° W]
         </div>
@@ -29,7 +75,9 @@
 
     <main class="container">
         <div class="app-grid">
-            <a href="mtimer/index.html" class="app-card">
+            
+            <!-- MTimer Entry -->
+            <div class="app-card">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px;">
                     <div class="precision-badge">
                         <span class="pulse-dot anim"></span>
@@ -39,9 +87,14 @@
                 </div>
                 <h2>MTIMER</h2>
                 <p style="margin-bottom: 30px; font-size: 0.95rem; line-height: 1.7;">High-precision meditation instrument with local biometric analysis.</p>
-                <span style="color: var(--primary); font-size: 0.7rem; font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase;">ENTER INSTRUMENT &rarr;</span>
-            </a>
+                
+                <div class="portal-links">
+                    <a href="mtimer/index.html" style="color: var(--primary); font-size: 0.7rem; font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase; text-decoration: none;">ENTER INSTRUMENT &rarr;</a>
+                    <a href="mtimer/about.html" style="color: var(--text-dim); font-size: 0.7rem; font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase; text-decoration: none;">LEARN MORE //</a>
+                </div>
+            </div>
 
+            <!-- Future Project Slot -->
             <div class="app-card" style="opacity: 0.4;">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px;">
                     <div class="precision-badge" style="background: transparent;">
@@ -53,70 +106,51 @@
                 <p style="margin-bottom: 30px; font-size: 0.95rem; line-height: 1.7;">Mechanical sub-components undergoing system calibration.</p>
                 <span style="color: var(--text-dim); font-size: 0.7rem; font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase; opacity: 0.5;">CALIBRATING...</span>
             </div>
+
         </div>
     </main>
 
-    <footer>
-        <a href="mailto:support@gnaanaa.com">CONTACT SUPPORT</a>
-    </footer>
-	<script>
-		const themeToggle = document.getElementById('themeToggle');
-		const root = document.documentElement;
+	<footer>
+		<div style="display: flex; gap: 30px; justify-content: center;">
+			<a href="mailto:support@gnaanaa.com">SUPPORT & CONTACT</a>
+		</div>
+		<p class="footer-copy"> © 2026 GNAANAA. ALL SYSTEMS NOMINAL. </p>
+	</footer>
 
-		// Safe Storage Helper to handle cases where localStorage is disabled (e.g. file:// protocol or blocked cookies)
-		const themeStorage = {
-			getItem(key) {
-				try {
-					return localStorage.getItem(key);
-				} catch (e) {
-					console.warn('localStorage is not accessible, using session storage fallback.', e);
-					try {
-						return sessionStorage.getItem(key);
-					} catch (e2) {
-						return this.fallbackStore[key] || null;
-					}
-				}
-			},
-			setItem(key, value) {
-				try {
-					localStorage.setItem(key, value);
-				} catch (e) {
-					console.warn('localStorage is not accessible, using session storage fallback.', e);
-					try {
-						sessionStorage.setItem(key, value);
-					} catch (e2) {
-						this.fallbackStore[key] = value;
-					}
-				}
-			},
-			fallbackStore: {}
-		};
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const root = document.documentElement;
 
-		function updateButtonText(isLight) {
-			if (themeToggle) themeToggle.textContent = isLight ? 'DARK MODE' : 'LIGHT MODE';
-		}
+        const themeStorage = {
+            getItem(key) {
+                try { return localStorage.getItem(key); } catch (e) { return this.fallbackStore[key] || null; }
+            },
+            setItem(key, value) {
+                try { localStorage.setItem(key, value); } catch (e) { this.fallbackStore[key] = value; }
+            },
+            fallbackStore: {}
+        };
 
-		// 1. Initial State Check (respects saved preference first, then falls back to system preferred scheme)
-		const savedTheme = themeStorage.getItem('theme');
-		const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-		const isLight = savedTheme === 'light' || (!savedTheme && systemPrefersLight);
+        function updateButtonText(isLight) {
+            if (themeToggle) themeToggle.textContent = isLight ? 'DARK MODE' : 'LIGHT MODE';
+        }
 
-		if (isLight) {
-			root.classList.add('light-theme');
-			updateButtonText(true);
-		} else {
-			root.classList.remove('light-theme');
-			updateButtonText(false);
-		}
+        const savedTheme = themeStorage.getItem('theme');
+        const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        const isLight = savedTheme === 'light' || (!savedTheme && systemPrefersLight);
 
-		// 2. Click Handler
-		if (themeToggle) {
-			themeToggle.addEventListener('click', () => {
-				const isLightNow = root.classList.toggle('light-theme');
-				themeStorage.setItem('theme', isLightNow ? 'light' : 'dark');
-				updateButtonText(isLightNow);
-			});
-		}
-	</script>
+        if (isLight) {
+            root.classList.add('light-theme');
+            updateButtonText(true);
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const isLightNow = root.classList.toggle('light-theme');
+                themeStorage.setItem('theme', isLightNow ? 'light' : 'dark');
+                updateButtonText(isLightNow);
+            });
+        }
+    </script>
 </body>
 </html>

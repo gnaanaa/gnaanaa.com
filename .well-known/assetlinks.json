@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.gnaanaa.mtimer",
+      "sha256_cert_fingerprints": [
+        "A3:63:25:8D:00:06:BB:7B:5C:19:0A:B8:76:0E:38:A5:6A:05:5D:0D:D3:66:BD:E0:87:2E:0F:2C:59:39:60:14"
+      ]
+    }
+  }
+]
