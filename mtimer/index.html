@@ -1,161 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZJR2R7E4"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'G-EKZJR2R7E4');
-	</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZJR2R7E4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EKZJR2R7E4');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTimer - High-Precision Meditation Instrument</title>
+    <meta name="description" content="Learn how to use MTimer — rotary dial, Calm Score biometrics, session history, ambient soundscapes, and the built-in meditation guide.">
+    <title>How MTimer Works — Precision Meditation Timer</title>
     <link rel="stylesheet" href="../assets/css/portal.css">
     <style>
-        /* Page-specific Layout */
-        .feature-block { 
-            display: flex; 
-            align-items: center; 
-            gap: 60px; 
-            margin-bottom: 120px; 
-        }
-        .feature-block:nth-child(even) { 
-            flex-direction: row-reverse; 
-        }
-        
-        .feature-text { 
-            flex: 1.5; 
-        }
-        
-        .feature-text h2 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-        }
 
-        .feature-index {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            margin-bottom: 10px;
-            display: block;
-            letter-spacing: 2px;
-        }
-        
-        @keyframes heartbeat {
-            from { stroke-dashoffset: 150; }
-            to { stroke-dashoffset: 0; }
-        }
-
-        @media (max-width: 768px) {
-            .feature-block { 
-                flex-direction: column !important; 
-                text-align: center; 
-                gap: 40px;
-                margin-bottom: 80px;
-            }
-            .feature-text {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-        }
     </style>
 </head>
 <body>
-
-    <!-- Theme Toggle (Fixed Position) -->
+	<!-- Theme Toggle (Fixed Position) -->
     <button id="themeToggle" class="theme-toggle">LIGHT MODE</button>
-
-    <!-- Hero Section -->
-    <section class="container" style="padding: 130px 20px 80px; text-align: center; border: none;">
-        <div class="precision-badge" style="margin-bottom: 30px;">
-            <span class="pulse-dot anim"></span>
-            MODEL M1 // MEDITATION HUD
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+			<div class="precision-badge" style="margin-bottom: 30px;">
+				<span class="pulse-dot anim"></span>
+				MODEL M1 // MEDITATION HUD
+			</div>
+			<div style="margin-bottom: 25px;">
+				<img class="theme-aware-image" src="assets/images/icon.png" style="width: 125px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);" alt="MTimer Icon">
+			</div>
+			<h1>MTIMER</h1>
+			<p style="letter-spacing: 5px; color: var(--text-dim); text-transform: uppercase; font-size: 0.85rem; font-family: var(--font-mono); margin-top: 15px;">
+				[ HIGH-PRECISION MEDITATION INSTRUMENT ]
+			</p>
+			<a href="https://play.google.com/store/apps/details?id=com.gnaanaa.mtimer" class="btn-instrument" style="margin-top: 40px;">GET ON PLAY STORE</a>
+            <nav class="toc">
+                <a href="#dial">The Dial</a>
+                <a href="#presets">Presets</a>
+                <a href="#session">Running a Session</a>
+                <a href="#calm-score">Calm Score</a>
+                <a href="#history">History</a>
+                <a href="#learn">Learn</a>
+                <a href="#settings">Settings</a>
+            </nav>
         </div>
-        <div style="margin-bottom: 25px;">
-            <img src="assets/images/icon.png" style="width: 125px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);" alt="MTimer Icon">
-        </div>
-        <h1>MTIMER</h1>
-        <p style="letter-spacing: 5px; color: var(--text-dim); text-transform: uppercase; font-size: 0.85rem; font-family: var(--font-mono); margin-top: 15px;">
-            [ HIGH-PRECISION MEDITATION INSTRUMENT ]
-        </p>
-        <a href="https://play.google.com/store/apps/details?id=com.gnaanaa.mtimer" class="btn-instrument" style="margin-top: 40px;">GET ON PLAY STORE</a>
     </section>
 
-    <!-- Features -->
-    <main class="container">
-        
-        <div class="feature-block">
-            <div class="feature-text">
-                <span class="feature-index">01 // TACTILE SETUP</span>
-                <h2>Precision Setup</h2>
-                <p>A zero-chrome HUD designed for the serious practitioner. The high-fidelity rotary dial allows for tactile, distraction-free session setup. The breathing action pivot provides a biological visual anchor for your focus.</p>
+    <!-- 01 THE DIAL -->
+    <section class="section" id="dial">
+        <div class="section-inner">
+             <div class="feature-text">
+                <span class="feature-index">01 // HOME SCREEN</span>
+                <h2>The Rotary Dial</h2>
+                <p>The home screen is the instrument face. Everything you need to start a session is here — no navigation required.</p>
             </div>
-            <div class="device-frame">
-                <img src="assets/images/screen-home.png" alt="Home Screen">
-            </div>
-        </div>
-		<a href="about.html" style="color: var(--primary); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 1px; text-decoration: none; margin-top: 15px; display: inline-block;">EXPLORE THE GUIDE &rarr;</a>
-
-        <div class="feature-block">
-            <div class="feature-text">
-                <span class="feature-index">02 // PHYSIOLOGICAL RESPONSE</span>
-                <h2>Biometric Insight</h2>
-                <p>The Session Calm Score analyzes heart rate samples via Health Connect to provide a real-time settling score. No external servers—all biological processing happens locally on your hardware.</p>
-                <div style="margin-top: 30px; display: flex; align-items: center; gap: 15px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--primary); letter-spacing: 2px;">
-                    <svg width="60" height="20" style="stroke: var(--primary); stroke-width: 1.5; fill: none; overflow: visible;">
-                        <path d="M 0 10 L 15 10 L 20 2 L 25 18 L 30 10 L 45 10 L 48 6 L 51 14 L 54 10 L 60 10" style="stroke-dasharray: 150; stroke-dashoffset: 150; animation: heartbeat 2.5s infinite linear;"></path>
-                    </svg>
-                    <span>BIOMETRIC FEEDBACK LOOP</span>
+            <div class="feature-block">
+                <div>
+                    <h3 style="font-size:0.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--primary);font-family:var(--font-mono);margin:0 0 14px;">SELECTING A PRESET</h3>
+                    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.75;margin:0 0 18px;">
+                        Rotate the dial by dragging — your presets sit as points around the outer ring. The selected preset name appears in the centre pill. The leaf icon shifts colour with the time of day: gold at dawn, blue midday, purple at dusk.
+                    </p>
+                    <ul class="detail-list">
+                        <li><strong>Rotate</strong> — drag anywhere on the dial to cycle through presets</li>
+                        <li><strong>Tap centre</strong> — starts the session immediately</li>
+                        <li><strong>Breathing ring</strong> — a slow pulsing ring confirms the dial is ready</li>
+                        <li><strong>State colour</strong> — leaf icon reflects time of day as a circadian cue</li>
+                        <li><strong>Quick edit</strong> — tap the selected preset's name pill to edit that preset directly</li>
+                    </ul>
+                    <div class="steps">
+                        <div class="step">
+                            <span class="step-num">STEP 01</span>
+                            <h4>Rotate</h4>
+                            <p>Drag the dial to find your preset</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-num">STEP 02</span>
+                            <h4>Confirm</h4>
+                            <p>Preset name appears in centre</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-num">STEP 03</span>
+                            <h4>Begin</h4>
+                            <p>Tap the centre to start</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="device-frame">
+					<img class="theme-aware-image" src="assets/images/screen-home.png" alt="Home">
                 </div>
             </div>
-            <div class="device-frame">
-                <img src="assets/images/screen-stats.png" alt="Biometrics">
-            </div>
-        </div>
-		<a href="about.html" style="color: var(--primary); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 1px; text-decoration: none; margin-top: 15px; display: inline-block;">UNDERSTAND THE SCORE &rarr;</a>
 
-        <div class="feature-block">
-            <div class="feature-text">
-                <span class="feature-index">03 // AMBIENT ENGINE</span>
-                <h2>Atmospheric Depth</h2>
-                <p>Immerse yourself in procedurally generated soundscapes. From Deep Rain to the rhythmic pulse of Ocean Waves, the ambient engine facilitates deep stillness while masking digital noise.</p>
-            </div>
-            <div class="device-frame">
-                <img src="assets/images/screen-ambient.png" alt="Ambient Soundscapes">
+            <div class="feature-block" style="margin-top:60px;">
+                <div>
+                    <h3 style="font-size:0.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--primary);font-family:var(--font-mono);margin:0 0 14px;">RECENT SESSIONS</h3>
+                    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.75;margin:0 0 18px;">
+                        The six most recent sessions appear as circles below the dial. Hold any circle for three seconds to re-launch that exact session. A circular progress arc counts down during the hold.
+                    </p>
+                    <ul class="detail-list">
+                        <li><strong>Completed circles</strong> — teal tonal, show minutes and timestamp</li>
+                        <li><strong>Incomplete circles</strong> — grey, show fraction of intended duration</li>
+                        <li><strong>Hold to relaunch</strong> — 3-second press; arc animates around the circle</li>
+                        <li><strong>Calm score badge</strong> — colour-coded by score band when available</li>
+                    </ul>
+                </div>
+				<div class="device-frame">
+					<img class="theme-aware-image" src="assets/images/screen-recent.png" alt="Recent">
+                </div>
             </div>
         </div>
-		<a href="about.html" style="color: var(--primary); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 1px; text-decoration: none; margin-top: 15px; display: inline-block;">ATMOSPHERIC SPECS &rarr;</a>
+    </section>
 
-        <!-- Quick Features Grid -->
-        <div class="technical-grid">
-            <div>
-                <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); margin-bottom: 15px; display: block;">[ COMPONENT 04 // CEILINGLESS ]</span>
-                <h3 style="font-size: 0.85rem; letter-spacing: 2px; color: var(--primary); font-family: var(--font-sans); margin-top: 0; text-transform: uppercase;">INFINITY MODE</h3>
-                <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 0;">Sit without a ceiling. A safe-hold stop mechanism ensures intentionality.</p>
+    <!-- 02 PRESETS -->
+    <section class="section" id="presets">
+        <div class="section-inner">
+             <div class="feature-text">
+                <span class="feature-index">02 // PRESETS</span>
+                <h2>Session Presets</h2>
+                <p>Save your most-used configurations — duration, bells, intervals, and ambient sound — as named presets accessible directly on the dial.</p>
             </div>
-            <div>
-                <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); margin-bottom: 15px; display: block;">[ COMPONENT 05 // COMPENDIUM ]</span>
-                <h3 style="font-size: 0.85rem; letter-spacing: 2px; color: var(--primary); font-family: var(--font-sans); margin-top: 0; text-transform: uppercase;">7 TRADITIONS</h3>
-                <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 0;">Built-in guide covering Breath Awareness, Mantra, and Self-Inquiry.</p>
-            </div>
-            <div>
-                <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); margin-bottom: 15px; display: block;">[ COMPONENT 06 // SYNC CORE ]</span>
-                <h3 style="font-size: 0.85rem; letter-spacing: 2px; color: var(--primary); font-family: var(--font-sans); margin-top: 0; text-transform: uppercase;">DRIVE BACKUP</h3>
-                <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 0;">Securely sync presets and history using your personal Google Drive storage.</p>
+            <div class="feature-block">
+                <div>
+                    <h3 style="font-size:0.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--primary);font-family:var(--font-mono);margin:0 0 14px;">WHAT A PRESET STORES</h3>
+                    <ul class="detail-list">
+                        <li><strong>Session name</strong> — up to 10 characters, shown on the dial ring</li>
+                        <li><strong>Duration</strong> — hours and minutes, or open-ended (∞)</li>
+                        <li><strong>Prep time</strong> — countdown before meditation begins (0–60s)</li>
+                        <li><strong>Start bell</strong> — Tibetan bowl, singing bowl, high chime, or silent</li>
+                        <li><strong>End bell</strong> — same options; fires 10 seconds before time is up</li>
+                        <li><strong>Interval chime</strong> — off, or every 5 / 10 / 15 / 20 / 30 minutes</li>
+                        <li><strong>Ambient sound</strong> — rain, ocean, pink noise, white noise, or none</li>
+                        <li><strong>Ambient volume</strong> — 0–100%, saved per preset independently</li>
+                    </ul>
+                    <div class="info-box">
+                        <span class="info-box-label">MANAGING PRESETS</span>
+                        <p>Presets are managed from the Presets tab in the bottom navigation bar. Add, edit, reorder, or delete from one screen. Tap the selected preset's name pill on the home screen for a quick edit without navigating away.</p>
+                    </div>
+                </div>
+                <div class="device-frame">
+                    <img class="theme-aware-image" src="assets/images/screen-preset.png" alt="Preset">
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- 03 SESSION -->
+    <section class="section" id="session">
+        <div class="section-inner">
+             <div class="feature-text">
+                <span class="feature-index">03 // ACTIVE SESSION</span>
+                <h2>Running a Session</h2>
+                <p>Once started, MTimer steps aside. The timer screen shows only what you need — and disappears entirely in Zen mode.</p>
+            </div>
+            <div class="feature-block">
+                <div class="device-frame">
+                    <div class="screenshot-placeholder">
+                        <img class="theme-aware-image" src="assets/images/screen-active.png" alt="Preset">
+                    </div>
+                </div>
+                <div>
+                    <h3 style="font-size:0.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--primary);font-family:var(--font-mono);margin:0 0 14px;">TIMER MODES</h3>
+                    <ul class="detail-list">
+                        <li><strong>Fixed session</strong> — counts down from preset duration; bell fires at completion</li>
+                        <li><strong>Open session (∞)</strong> — counts up with no fixed end; long press Stop to close</li>
+                        <li><strong>Zen mode</strong> — hides the timer display entirely; tap screen to reveal</li>
+                        <li><strong>Prep countdown</strong> — short countdown before meditation begins, if configured</li>
+                        <li><strong>Interval bells</strong> — fire at configured intervals throughout the session</li>
+                        <li><strong>Ambient fade</strong> — soundscape fades over 8 seconds as the end bell rings</li>
+                    </ul>
+
+                    <h3 style="font-size:0.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--primary);font-family:var(--font-mono);margin:28px 0 14px;">INFINITY SESSION ∞</h3>
+                    <p style="font-size:0.875rem;color:var(--text-dim);line-height:1.7;margin:0 0 14px;">
+                        The guarded ∞ button in the top-right of the home screen starts a session with no fixed duration. A safety guard prevents accidental activation.
+                    </p>
+                    <ul class="detail-list">
+                        <li><strong>Swipe up</strong> on the guard to arm; 3-second auto-disarm if not tapped</li>
+                        <li><strong>Long press</strong> the ∞ button to configure its bells and prep time</li>
+                        <li><strong>Long press Stop</strong> (1.5 seconds) to end the session intentionally</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 CALM SCORE -->
+    <section class="section" id="calm-score">
+        <div class="section-inner">
+             <div class="feature-text">
+                <span class="feature-index">04 // PHYSIOLOGICAL INSIGHT</span>
+                <h2>Session Calm Score</h2>
+                <p>After each session, MTimer reads heart rate data from your wearable via Health Connect and calculates a settling score entirely on your device. Nothing is transmitted externally.</p>
+            </div>
+            <div class="feature-block">
+                <div>
+                    <h3 style="font-size:0.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--primary);font-family:var(--font-mono);margin:0 0 14px;">HOW THE SCORE IS CALCULATED</h3>
+                    <p style="font-size:0.875rem;color:var(--text-dim);line-height:1.75;margin:0 0 20px;">
+                        Three components, each normalised to your own physiology — not a population average. The score refines as your personal baseline builds across sessions.
+                    </p>
+                    <div class="score-breakdown">
+                        <div class="score-row-item">
+                            <span class="slabel">HR Drop</span>
+                            <div class="score-bar-wrap"><div class="score-bar" style="width:80%;background:var(--primary);"></div></div>
+                            <span class="sval" style="color:var(--primary);">32 / 40</span>
+                        </div>
+                        <div class="score-row-item">
+                            <span class="slabel">Stability</span>
+                            <div class="score-bar-wrap"><div class="score-bar" style="width:70%;background:#a78bfa;"></div></div>
+                            <span class="sval" style="color:#a78bfa;">28 / 40</span>
+                        </div>
+                        <div class="score-row-item">
+                            <span class="slabel">Duration</span>
+                            <div class="score-bar-wrap"><div class="score-bar" style="width:80%;background:#d9b85c;"></div></div>
+                            <span class="sval" style="color:#d9b85c;">16 / 20</span>
+                        </div>
+                        <div class="score-row-item" style="margin-top:8px;padding-top:14px;border-top:1px solid var(--border);">
+                            <span class="slabel" style="color:var(--text-main);font-weight:600;">CALM SCORE</span>
+                            <div class="score-bar-wrap"><div class="score-bar" style="width:76%;background:var(--text-main);"></div></div>
+                            <span class="sval" style="color:var(--text-main);font-size:1rem;">76</span>
+                        </div>
+                    </div>
+                    <ul class="detail-list" style="margin-top:20px;">
+                        <li><strong>HR Drop (40pts)</strong> — heart rate fall from session start to end</li>
+                        <li><strong>HR Stability (40pts)</strong> — rhythm regularity vs your personal baseline</li>
+                        <li><strong>Duration (20pts)</strong> — proportional reward for longer sessions</li>
+                        <li><strong>Calibrates after 3 sessions</strong> — refines over your next 10</li>
+                        <li><strong>Opt-in only</strong> — off by default; enable in Settings → Insights</li>
+                        <li><strong>On-device only</strong> — no data leaves the app, ever</li>
+                    </ul>
+                </div>
+                <div class="device-frame">
+                    <div class="screenshot-placeholder">
+                        <img class="theme-aware-image" src="assets/images/screen-insight.png" alt="Preset">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Score colour legend -->
+            <div class="technical-grid" style="margin-top:48px;">
+                <div>
+                    <span style="font-family:var(--font-mono);font-size:0.6rem;color:#d66a6a;letter-spacing:2px;display:block;margin-bottom:10px;">● ENERGY — 0–39</span>
+                    <p style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;margin:0;">Higher tension. The body was working to settle. Common in busy or caffeine-affected sessions.</p>
+                </div>
+                <div>
+                    <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--primary);letter-spacing:2px;display:block;margin-bottom:10px;">● FOCUS — 40–59</span>
+                    <p style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;margin:0;">Moderate settling. The nervous system was engaged but not fully at rest.</p>
+                </div>
+                <div>
+                    <span style="font-family:var(--font-mono);font-size:0.6rem;color:#d9b85c;letter-spacing:2px;display:block;margin-bottom:10px;">● AWARENESS — 60–74</span>
+                    <p style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;margin:0;">Good settling. Heart rate dropped clearly and rhythm was stable.</p>
+                </div>
+                <div>
+                    <span style="font-family:var(--font-mono);font-size:0.6rem;color:#a78bfa;letter-spacing:2px;display:block;margin-bottom:10px;">● INSIGHT — 75–89</span>
+                    <p style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;margin:0;">Deep settling. Strong parasympathetic response. Body and mind genuinely at rest.</p>
+                </div>
+                <div>
+                    <span style="font-family:var(--font-mono);font-size:0.6rem;color:#f3f4f6;letter-spacing:2px;display:block;margin-bottom:10px;">● PRESENCE — 90–100</span>
+                    <p style="font-size:0.8rem;color:var(--text-dim);line-height:1.6;margin:0;">Exceptional settling. Rare. Heart rate dropped significantly and held stable throughout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 HISTORY -->
+    <section class="section" id="history">
+        <div class="section-inner">
+             <div class="feature-text">
+                <span class="feature-index">05 // PROGRESS TRACKING</span>
+                <h2>Session History</h2>
+                <p>Every session is logged. The History screen surfaces your practice patterns over weeks and lets you review individual sessions in detail.</p>
+            </div>
+            <div class="feature-block">
+                <div class="device-frame">
+                    <div class="screenshot-placeholder">
+                        <img class="theme-aware-image" src="assets/images/screen-history.png" alt="Preset">
+                    </div>
+                </div>
+                <div>
+                    <h3 style="font-size:0.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--primary);font-family:var(--font-mono);margin:0 0 14px;">WHAT HISTORY SHOWS</h3>
+                    <div class="stat-row">
+                        <div class="stat-cell">
+                            <span class="snum">12W</span>
+                            <span class="sunit">GRAPH</span>
+                            <span class="sdesc">Minutes per week</span>
+                        </div>
+                        <div class="stat-cell">
+                            <span class="snum">∞</span>
+                            <span class="sunit">SESSIONS</span>
+                            <span class="sdesc">Full history log</span>
+                        </div>
+                        <div class="stat-cell">
+                            <span class="snum">HR</span>
+                            <span class="sunit">PER SESSION</span>
+                            <span class="sdesc">Heart rate graph</span>
+                        </div>
+                    </div>
+                    <ul class="detail-list" style="margin-top:20px;">
+                        <li><strong>Lifetime stats</strong> — total minutes, current streak, weekly snapshot</li>
+                        <li><strong>12-week graph</strong> — solid line for minutes, dashed for weekly calm average</li>
+                        <li><strong>Session list</strong> — tap any entry to expand detail and heart rate graph</li>
+                        <li><strong>Calm breakdown</strong> — HR drop, stability, and duration components per session</li>
+                        <li><strong>Pull to refresh</strong> — triggers Health Connect sync for latest wearable data</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 LEARN -->
+    <section class="section" id="learn">
+        <div class="section-inner">
+             <div class="feature-text">
+                <span class="feature-index">06 // PRACTICE GUIDE</span>
+                <h2>Learn to Meditate</h2>
+                <p>Seven methods drawn from classical traditions — written for clarity, suitable for any level. Accessible from the Learn tab in the navigation bar.</p>
+            </div>
+            <div class="method-grid">
+                <div class="method-card">
+                    <span class="method-level beginner">● BEGINNER</span>
+                    <h4>Watching the Breath</h4>
+                    <p>Notice the breath without changing it. The foundation of all other practices and the most reliable object of attention.</p>
+                </div>
+                <div class="method-card">
+                    <span class="method-level beginner">● BEGINNER</span>
+                    <h4>Hum-Sau Mantra</h4>
+                    <p>Sri M's instruction — Hum on the inhale, Sau on the exhale. The breath carries the mantra; no effort required.</p>
+                </div>
+                <div class="method-card">
+                    <span class="method-level beginner">● BEGINNER</span>
+                    <h4>Steady Gazing</h4>
+                    <p>Fix the gaze on a candle flame or point. Outer stillness produces inner stillness. Builds one-pointed concentration.</p>
+                </div>
+                <div class="method-card">
+                    <span class="method-level intermediate">● INTERMEDIATE</span>
+                    <h4>So-Ham with Pathway</h4>
+                    <p>The breath mantra moves with a felt inner pathway through the body. So on the inhale, Ham on the exhale.</p>
+                </div>
+                <div class="method-card">
+                    <span class="method-level intermediate">● INTERMEDIATE</span>
+                    <h4>Self-Inquiry</h4>
+                    <p>Ramana Maharshi's method. "Who am I?" — not a question to answer but a direction to follow inward toward the source of thought.</p>
+                </div>
+                <div class="method-card">
+                    <span class="method-level intermediate">● INTERMEDIATE</span>
+                    <h4>Inner Sound</h4>
+                    <p>Nada Yoga from the Nath tradition. Block the outer ears and listen inward — from gross sounds toward the most subtle.</p>
+                </div>
+                <div class="method-card">
+                    <span class="method-level advanced">● ADVANCED</span>
+                    <h4>Inner Concentration</h4>
+                    <p>Attention directed toward the Ajna centre — the point between the brows. Requires stable concentration built through earlier practices.</p>
+                </div>
+            </div>
+            <div class="info-box" style="margin-top:28px;">
+                <span class="info-box-label">NAVIGATION</span>
+                <p>Each method opens as an accordion. Use the jump chips at the top of the Learn screen — BASICS, METHODS, PRINCIPLES, SOURCES — to navigate directly to any section. Only one section is open at a time to maintain focus.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 07 SETTINGS -->
+    <section class="section" id="settings">
+        <div class="section-inner">
+             <div class="feature-text">
+                <span class="feature-index">07 // CONFIGURATION</span>
+                <h2>App Settings</h2>
+                <p>Everything in one screen — appearance, health sync, data backup, and the Calm Score opt-in.</p>
+            </div>
+            <div class="feature-block">
+                <div>
+                    <table class="settings-table">
+                        <thead>
+                            <tr><th>SETTING</th><th>WHAT IT DOES</th></tr>
+                        </thead>
+                        <tbody>
+							<tr><td>Presets</td><td>Add/Remove/Manage the presets as per your requirements.</td></tr>
+                            <tr><td>Theme</td><td>System default, Light, or Dark. Follows system setting unless overridden manually.</td></tr>
+							<tr><td>Calm Score</td><td>Off by default. Enable to compute physiological settling scores from wearable heart rate data. On-device only — no data leaves the app.</td></tr>
+                            <tr><td>Health Connect</td><td>Writes mindfulness minutes and heart rate to Android Health Connect after each session.</td></tr>
+                            <tr><td>Google Fit</td><td>Logs meditation to Google Fit for third-party app compatibility.</td></tr>
+                            <tr><td>Cloud Backup</td><td>Sign in with Google to sync presets and history to your personal Google Drive automatically.</td></tr>
+                            <tr><td>Export data</td><td>Save your full session history and presets as a JSON file to any location on your device.</td></tr>
+                            <tr><td>Import data</td><td>Restore from a previously exported JSON backup file.</td></tr>
+                            <tr><td>Rate this app</td><td>Opens the Google Play in-app review sheet directly without leaving the app.</td></tr>
+                            <tr><td>Support this app</td><td>Optional one-time tip — $1, $3, or $5. MTimer has no subscription and no ads.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="device-frame">
+                    <div class="screenshot-placeholder">
+                        <img class="theme-aware-image" src="assets/images/screen-settings.png" alt="Preset">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="precision-badge" style="margin-bottom:24px;">
+            <span class="pulse-dot anim"></span>
+            ANDROID // FREE TO DOWNLOAD
+        </div>
+        <h2>Begin your practice</h2>
+        <p>No guided voices. No subscription. Just a timer and your breath.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.gnaanaa.mtimer" class="btn-instrument">GET ON GOOGLE PLAY</a>
+    </section>
 
     <!-- Footer -->
 	<footer>
 		<!-- Project Level -->
 		<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
 			<a href="index.html" style="font-size: 0.7rem; letter-spacing: 2px;">MTIMER HOME</a>
-			<a href="about.html" style="font-size: 0.7rem; letter-spacing: 2px;">MTIMER GUIDE</a>
 			<a href="privacy.html" style="font-size: 0.7rem; letter-spacing: 2px;">PRIVACY POLICY</a>
 			<a href="terms.html" style="font-size: 0.7rem; letter-spacing: 2px;">TERMS OF SERVICE</a>
 		</div>
@@ -206,6 +461,17 @@
 		function updateButtonText(isLight) {
 			if (themeToggle) themeToggle.textContent = isLight ? 'DARK MODE' : 'LIGHT MODE';
 		}
+		
+		function updateThemeImages(isLight) {
+			document.querySelectorAll('.theme-aware-image').forEach(img => {
+
+				const darkSrc = img.src.replace('-light.png', '.png');
+
+				img.src = isLight
+					? darkSrc.replace('.png', '-light.png')
+					: darkSrc;
+			});
+		}
 
 		// 1. Initial State Check (respects saved preference first, then falls back to system preferred scheme)
 		const savedTheme = themeStorage.getItem('theme');
@@ -215,9 +481,11 @@
 		if (isLight) {
 			root.classList.add('light-theme');
 			updateButtonText(true);
+			updateThemeImages(true);
 		} else {
 			root.classList.remove('light-theme');
 			updateButtonText(false);
+			updateThemeImages(false);
 		}
 
 		// 2. Click Handler
@@ -226,8 +494,10 @@
 				const isLightNow = root.classList.toggle('light-theme');
 				themeStorage.setItem('theme', isLightNow ? 'light' : 'dark');
 				updateButtonText(isLightNow);
+				updateThemeImages(isLightNow);
 			});
 		}
+
 	</script>
 </body>
 </html>

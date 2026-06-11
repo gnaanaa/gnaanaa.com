@@ -15,6 +15,16 @@
 	<title>Terms of Service - MTimer Instrument</title>
 	<link rel="stylesheet" href="../assets/css/portal.css">
 	<script>
+		function updateThemeImages(isLight) {
+			document.querySelectorAll('.theme-aware-image').forEach(img => {
+			const darkSrc = img.src.replace('-light.png', '.png');
+
+			img.src = isLight
+				? darkSrc.replace('.png', '-light.png')
+				: darkSrc;
+			});
+		}
+		
 		try {
 			const savedTheme = localStorage.getItem('theme');
 			const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -32,6 +42,9 @@
 	</head>
 	<body>
 		<section class="container" style="padding-top: 100px; text-align: center; border: none;">
+			<div style="margin-bottom: 25px;">
+				<img class="theme-aware-image" src="assets/images/icon.png" style="width: 125px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);" alt="MTimer Icon">
+			</div>
 			<h1>TERMS OF SERVICE</h1>
 			<p style="letter-spacing: 2px; color: var(--text-dim); font-size: 0.75rem; margin-top: 15px; font-family: var(--font-mono); text-transform: uppercase;">EFFECTIVE DATE: JUNE 7, 2026</p>
 		</section>
@@ -65,7 +78,6 @@
 			<!-- Project Level -->
 			<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
 				<a href="index.html" style="font-size: 0.7rem; letter-spacing: 2px;">MTIMER HOME</a>
-				<a href="about.html" style="font-size: 0.7rem; letter-spacing: 2px;">MTIMER GUIDE</a>
 				<a href="privacy.html" style="font-size: 0.7rem; letter-spacing: 2px;">PRIVACY POLICY</a>
 				<a href="terms.html" style="font-size: 0.7rem; letter-spacing: 2px;">TERMS OF SERVICE</a>
 			</div>
@@ -78,5 +90,11 @@
 			&copy; 2026 GNAANAA // MTIMER INSTRUMENT // BIOMETRIC PRIVACY VERIFIED.
 			</p>
 		</footer>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+			const isLight = document.documentElement.classList.contains('light-theme');
+			updateThemeImages(isLight);
+		});
+		</script>
 	</body>
 </html>
