@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZJR2R7E4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EKZJR2R7E4');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gnaanaa | Software Instruments</title>
+    <link rel="stylesheet" href="assets/css/portal.css">
+    <style>
+        /* Page-specific Responsive Overrides */
+        header {
+            padding: 160px 20px 80px;
+            text-align: center;
+            transition: padding 0.3s ease;
+        }
+
+        .portal-links {
+            display: flex;
+            gap: 25px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 100px 20px 50px;
+            }
+            h1 {
+                font-size: 2.2rem;
+                letter-spacing: 8px;
+            }
+            .app-grid {
+                margin-top: 30px;
+                gap: 20px;
+            }
+            .app-card {
+                padding: 30px;
+            }
+            .portal-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Small screen optimization */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+                letter-spacing: 5px;
+            }
+            .app-card h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="themeToggle" class="theme-toggle">LIGHT MODE</button>
+    
+    <header>
+        <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 4px; color: var(--text-dim); margin-bottom: 15px; text-transform: uppercase;">
+            SYS.LOC // [0.0001° N, 0.0001° W]
+        </div>
+        <h1>GNAANAA</h1>
+        <p style="letter-spacing: 6px; color: var(--text-dim); font-size: 0.75rem; margin-top: 15px; font-family: var(--font-mono); text-transform: uppercase;">
+            [ SOFTWARE INSTRUMENTS // CHRONOMETRIC CORE ]
+        </p>
+    </header>
+
+    <main class="container">
+        <div class="app-grid">
+            
+            <!-- MTimer Entry -->
+            <div class="app-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px;">
+                    <div class="precision-badge">
+                        <span class="pulse-dot anim"></span>
+                        HUD NOT FOUND
+                    </div>
+                    <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); opacity: 0.5;">NO. 404</span>
+                </div>
+                <h2>PAGE NOT FOUND</h2>
+                <p style="margin-bottom: 30px; font-size: 0.95rem; line-height: 1.7;">The Page you are looking for is not found.</p>
+                
+                <div class="portal-links">
+                    <a href="index.html" style="color: var(--primary); font-size: 0.7rem; font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase; text-decoration: none;">ENTER HOME &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+	<footer>
+		<div style="display: flex; gap: 30px; justify-content: center;">
+			<a href="mailto:support@gnaanaa.com">SUPPORT & CONTACT</a>
+		</div>
+		<p class="footer-copy"> © 2026 GNAANAA. ALL SYSTEMS NOMINAL. </p>
+	</footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const root = document.documentElement;
+
+        const themeStorage = {
+            getItem(key) {
+                try { return localStorage.getItem(key); } catch (e) { return this.fallbackStore[key] || null; }
+            },
+            setItem(key, value) {
+                try { localStorage.setItem(key, value); } catch (e) { this.fallbackStore[key] = value; }
+            },
+            fallbackStore: {}
+        };
+
+        function updateButtonText(isLight) {
+            if (themeToggle) themeToggle.textContent = isLight ? 'DARK MODE' : 'LIGHT MODE';
+        }
+
+        const savedTheme = themeStorage.getItem('theme');
+        const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        const isLight = savedTheme === 'light' || (!savedTheme && systemPrefersLight);
+
+        if (isLight) {
+            root.classList.add('light-theme');
+            updateButtonText(true);
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const isLightNow = root.classList.toggle('light-theme');
+                themeStorage.setItem('theme', isLightNow ? 'light' : 'dark');
+                updateButtonText(isLightNow);
+            });
+        }
+    </script>
+</body>
+</html>
