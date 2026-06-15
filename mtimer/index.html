@@ -228,7 +228,7 @@
                     </ul>
                 </div>
                 <div class="device-frame">
-                    <img class="theme-aware-image" src="assets/images/screen-insight.png" alt="Insight">
+                    <img class="theme-aware-image" src="assets/images/screen-calm.png" alt="Insight">
                 </div>
             </div>
 
@@ -258,48 +258,84 @@
         </div>
     </section>
 
-    <!-- 05 HISTORY -->
-    <section class="section" id="history">
-        <div class="section-inner">
-             <div class="feature-text">
-                <span class="feature-index">05 // PROGRESS TRACKING</span>
-                <h2>Session History</h2>
-                <p>Every session is logged. The History screen surfaces your practice patterns over weeks and lets you review individual sessions in detail.</p>
+<!-- 05 INSIGHTS & SESSION LOG -->
+<section class="section" id="history">
+    <div class="section-inner">
+        <div class="feature-text">
+            <span class="feature-index">05 // PROGRESS TRACKING</span>
+            <h2>Insights & Session Log</h2>
+            <p>Your practice data lives in two places — an Insights dashboard for patterns and trends at a glance, and a dedicated Session Log where every session is recorded and reviewable in full detail.</p>
+        </div>
+
+        <!-- Block 1: Insights -->
+        <div class="feature-block">
+            <div class="device-frame">
+                <img class="theme-aware-image" src="assets/images/screen-insights.png" alt="Insights Dashboard">
             </div>
-            <div class="feature-block">
-                <div class="device-frame">
-                    <img class="theme-aware-image" src="assets/images/screen-history.png" alt="Progress">
-                </div>
-                <div>
-                    <h3 style="font-size:0.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--primary);font-family:var(--font-mono);margin:0 0 14px;">WHAT HISTORY SHOWS</h3>
-                    <div class="stat-row">
-                        <div class="stat-cell">
-                            <span class="snum">12W</span>
-                            <span class="sunit">GRAPH</span>
-                            <span class="sdesc">Minutes per week</span>
-                        </div>
-                        <div class="stat-cell">
-                            <span class="snum">∞</span>
-                            <span class="sunit">SESSIONS</span>
-                            <span class="sdesc">Full history log</span>
-                        </div>
-                        <div class="stat-cell">
-                            <span class="snum">HR</span>
-                            <span class="sunit">PER SESSION</span>
-                            <span class="sdesc">Heart rate graph</span>
-                        </div>
+            <div>
+                <h3 style="font-size:0.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--primary);font-family:var(--font-mono);margin:0 0 14px;">INSIGHTS DASHBOARD</h3>
+                <div class="stat-row">
+                    <div class="stat-cell">
+                        <span class="snum">12W</span>
+                        <span class="sunit">GRAPH</span>
+                        <span class="sdesc">Minutes & calm trend</span>
                     </div>
-                    <ul class="detail-list" style="margin-top:20px;">
-                        <li><strong>Lifetime stats</strong> — total minutes, current streak, weekly snapshot</li>
-                        <li><strong>12-week graph</strong> — solid line for minutes, dashed for weekly calm average</li>
-                        <li><strong>Session list</strong> — tap any entry to expand detail and heart rate graph</li>
-                        <li><strong>Calm breakdown</strong> — HR drop, stability, and duration components per session</li>
-                        <li><strong>Pull to refresh</strong> — triggers Health Connect sync for latest wearable data</li>
-                    </ul>
+                    <div class="stat-cell">
+                        <span class="snum">2×2</span>
+                        <span class="sunit">CARDS</span>
+                        <span class="sdesc">Calm & practice trends</span>
+                    </div>
+                    <div class="stat-cell">
+                        <span class="snum">AVG</span>
+                        <span class="sunit">CALM</span>
+                        <span class="sdesc">Score over time</span>
+                    </div>
                 </div>
+                <ul class="detail-list" style="margin-top:20px;">
+                    <li><strong>Weekly breakdown</strong> — this week, best week, and 12-week average in a compact grid</li>
+                    <li><strong>12-week chart</strong> — solid line for minutes, dashed for calm score trend</li>
+                    <li><strong>Calm & trends</strong> — average calm score, best preset type, sessions per week, and morning ratio</li>
+                    <li><strong>Session Log entry</strong> — one tap from the bottom of Insights into the full session history</li>
+                </ul>
             </div>
         </div>
-    </section>
+
+        <!-- Block 2: Session Log -->
+        <div class="feature-block">
+            <div class="device-frame">
+                <img class="theme-aware-image" src="assets/images/screen-log.png" alt="Session Log Calendar">
+            </div>
+            <div>
+                <h3 style="font-size:0.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--primary);font-family:var(--font-mono);margin:0 0 14px;">SESSION LOG</h3>
+                <div class="stat-row">
+                    <div class="stat-cell">
+                        <span class="snum">Cal</span>
+                        <span class="sunit">VIEW</span>
+                        <span class="sdesc">Navigate by month</span>
+                    </div>
+                    <div class="stat-cell">
+                        <span class="snum">∞</span>
+                        <span class="sunit">SESSIONS</span>
+                        <span class="sdesc">Full history log</span>
+                    </div>
+                    <div class="stat-cell">
+                        <span class="snum">HR</span>
+                        <span class="sunit">PER SESSION</span>
+                        <span class="sdesc">Heart rate graph</span>
+                    </div>
+                </div>
+                <ul class="detail-list" style="margin-top:20px;">
+                    <li><strong>Calendar view</strong> — navigate by month, teal dots for AM sessions, purple for PM</li>
+                    <li><strong>Streak continuity</strong> — consecutive practice days highlighted directly on the calendar</li>
+                    <li><strong>Day detail panel</strong> — tap any date to see its sessions with time, preset, and calm score</li>
+                    <li><strong>Full session detail</strong> — heart rate graph, calm breakdown, HR drop, stability, and duration components</li>
+                    <li><strong>Pull to refresh</strong> — triggers Health Connect sync for latest wearable data</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     <!-- 06 LEARN -->
     <section class="section" id="learn">
