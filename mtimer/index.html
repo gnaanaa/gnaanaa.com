@@ -188,43 +188,48 @@
              <div class="feature-text">
                 <span class="feature-index">04 // PHYSIOLOGICAL INSIGHT</span>
                 <h2>Session Calm Score</h2>
-                <p>After each session, MTimer reads heart rate data from your wearable via Health Connect and calculates a settling score entirely on your device. Nothing is transmitted externally.</p>
+                <p>After each session, MTimer reads heart rate and HRV (RMSSD) data from your wearable via Health Connect. It calculates a settling score entirely on your device using a read-only minimum scope approach. Nothing is transmitted externally.</p>
             </div>
             <div class="feature-block">
                 <div>
                     <h3 style="font-size:0.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--primary);font-family:var(--font-mono);margin:0 0 14px;">HOW THE SCORE IS CALCULATED</h3>
                     <p style="font-size:0.875rem;color:var(--text-dim);line-height:1.75;margin:0 0 20px;">
-                        Three components, each normalised to your own physiology — not a population average. The score refines as your personal baseline builds across sessions.
+                        Four metrics, each normalised to your own physiology — not a population average. The score refines as your personal baseline builds across sessions.
                     </p>
                     <div class="score-breakdown">
                         <div class="score-row-item">
                             <span class="slabel">HR Drop</span>
-                            <div class="score-bar-wrap"><div class="score-bar" style="width:80%;background:var(--primary);"></div></div>
-                            <span class="sval" style="color:var(--primary);">32 / 40</span>
+                            <div class="score-bar-wrap"><div class="score-bar" style="width:25%;background:var(--primary);"></div></div>
+                            <span class="sval" style="color:var(--primary);">20 / 25</span>
                         </div>
                         <div class="score-row-item">
                             <span class="slabel">Stability</span>
-                            <div class="score-bar-wrap"><div class="score-bar" style="width:70%;background:#a78bfa;"></div></div>
-                            <span class="sval" style="color:#a78bfa;">28 / 40</span>
+                            <div class="score-bar-wrap"><div class="score-bar" style="width:20%;background:#a78bfa;"></div></div>
+                            <span class="sval" style="color:#a78bfa;">15 / 25</span>
+                        </div>
+                        <div class="score-row-item">
+                            <span class="slabel">HRV (RMSSD)</span>
+                            <div class="score-bar-wrap"><div class="score-bar" style="width:24%;background:#60a5fa;"></div></div>
+                            <span class="sval" style="color:#60a5fa;">24 / 30</span>
                         </div>
                         <div class="score-row-item">
                             <span class="slabel">Duration</span>
-                            <div class="score-bar-wrap"><div class="score-bar" style="width:80%;background:#d9b85c;"></div></div>
+                            <div class="score-bar-wrap"><div class="score-bar" style="width:16%;background:#d9b85c;"></div></div>
                             <span class="sval" style="color:#d9b85c;">16 / 20</span>
                         </div>
                         <div class="score-row-item" style="margin-top:8px;padding-top:14px;border-top:1px solid var(--border);">
                             <span class="slabel" style="color:var(--text-main);font-weight:600;">CALM SCORE</span>
-                            <div class="score-bar-wrap"><div class="score-bar" style="width:76%;background:var(--text-main);"></div></div>
-                            <span class="sval" style="color:var(--text-main);font-size:1rem;">76</span>
+                            <div class="score-bar-wrap"><div class="score-bar" style="width:75%;background:var(--text-main);"></div></div>
+                            <span class="sval" style="color:var(--text-main);font-size:1rem;">75</span>
                         </div>
                     </div>
                     <ul class="detail-list" style="margin-top:20px;">
-                        <li><strong>HR Drop (40pts)</strong> — heart rate fall from session start to end</li>
-                        <li><strong>HR Stability (40pts)</strong> — rhythm regularity vs your personal baseline</li>
+                        <li><strong>HR Drop (25pts)</strong> — heart rate fall from session start to end</li>
+                        <li><strong>HR Stability (25pts)</strong> — rhythm regularity vs your personal baseline</li>
+                        <li><strong>HRV RMSSD (30pts)</strong> — parasympathetic activation vs 10-day baseline</li>
                         <li><strong>Duration (20pts)</strong> — proportional reward for longer sessions</li>
-                        <li><strong>Calibrates after 3 sessions</strong> — refines over your next 10</li>
-                        <li><strong>Opt-in only</strong> — off by default; enable in Settings → Insights</li>
-                        <li><strong>On-device only</strong> — no data leaves the app, ever</li>
+                        <li><strong>Read-Only Access</strong> — we consume data, we don't own or re-write it</li>
+                        <li><strong>Contextual Opt-in</strong> — only requested when Calm Score is enabled</li>
                     </ul>
                 </div>
                 <div class="device-frame">
@@ -264,9 +269,8 @@
         <div class="feature-text">
             <span class="feature-index">05 // PROGRESS TRACKING</span>
             <h2>Insights & Session Log</h2>
-            <p>Your practice data lives in two places — an Insights dashboard for patterns and trends at a glance, and a dedicated Session Log where every session is recorded and reviewable in full detail.</p>
+            <p>Your practice data lives in two places — a 30-day Insights dashboard for identifying physiological trends, and a granular Session Log where every session is reviewable in full detail.</p>
         </div>
-
         <!-- Block 1: Insights -->
         <div class="feature-block">
             <div class="device-frame">
@@ -276,26 +280,27 @@
                 <h3 style="font-size:0.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--primary);font-family:var(--font-mono);margin:0 0 14px;">INSIGHTS DASHBOARD</h3>
                 <div class="stat-row">
                     <div class="stat-cell">
-                        <span class="snum">12W</span>
-                        <span class="sunit">GRAPH</span>
-                        <span class="sdesc">Minutes & calm trend</span>
-                    </div>
-                    <div class="stat-cell">
-                        <span class="snum">2×2</span>
-                        <span class="sunit">CARDS</span>
-                        <span class="sdesc">Calm & practice trends</span>
+                        <span class="snum">30D</span>
+                        <span class="sunit">TRENDS</span>
+                        <span class="sdesc">Minutes, Calm & HRV</span>
                     </div>
                     <div class="stat-cell">
                         <span class="snum">AVG</span>
-                        <span class="sunit">CALM</span>
-                        <span class="sdesc">Score over time</span>
+                        <span class="sunit">SCORES</span>
+                        <span class="sdesc">Circular Indicators</span>
+                    </div>
+                    <div class="stat-cell">
+                        <span class="snum">W/W</span>
+                        <span class="sunit">PERF</span>
+                        <span class="sdesc">Weekly Comparison</span>
                     </div>
                 </div>
                 <ul class="detail-list" style="margin-top:20px;">
-                    <li><strong>Weekly breakdown</strong> — this week, best week, and 12-week average in a compact grid</li>
-                    <li><strong>12-week chart</strong> — solid line for minutes, dashed for calm score trend</li>
-                    <li><strong>Calm & trends</strong> — average calm score, best preset type, sessions per week, and morning ratio</li>
-                    <li><strong>Session Log entry</strong> — one tap from the bottom of Insights into the full session history</li>
+                    <li><strong>30-Day Trend Chart</strong> — Toggle between Minutes, Calm, and HRV (RMSSD) to see how your physiology responds to consistent practice.</li>
+                    <li><strong>Circular Indicators</strong> — Rolling 30-day averages for Calm and HRV, providing a high-level view of your autonomic balance and settling depth.</li>
+                    <li><strong>Weekly Performance</strong> — Compare current performance against your best week and personal averages in a compact grid.</li>
+                    <li><strong>Practice Trends</strong> — Analytical cards identifying your most effective Preset Types and your Morning/Night session ratio.</li>
+                    <li><strong>Unified Entry</strong> — One-tap access from the base of the dashboard into your complete historical Session Log.</li>
                 </ul>
             </div>
         </div>
